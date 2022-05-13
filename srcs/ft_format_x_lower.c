@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_format_x_lower.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rzaccari <rzaccari@student.42lausanne.c    +#+  +:+       +#+        */
+/*   By: rzaccari <rzaccari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/20 14:58:28 by rzaccari          #+#    #+#             */
-/*   Updated: 2022/05/12 20:24:32 by rzaccari         ###   ########.fr       */
+/*   Updated: 2022/05/13 17:38:41 by rzaccari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/ft_printf.h"
 
-void	format_x_lower(Input *args)
+void	format_x_lower(t_input *args)
 {
 	char	*lower_x;
 	int		i;
@@ -20,23 +20,21 @@ void	format_x_lower(Input *args)
 	lower_x = itoa_hex_lower(va_arg(args->arguments, unsigned int));
 	i = 0;
 	while (lower_x[i])
-		args->char_count += write(1, &lower_x[i++], 1);		
+		args->char_count += write(1, &lower_x[i++], 1);
 	free(lower_x);
 }
 
-char 	*itoa_hex_lower(unsigned int nbr)
+char	*itoa_hex_lower(unsigned int nbr)
 {
-	
 	char	*base;
 	char	*str;
 	int		i;
 	int		rem;
 
 	base = "0123456789abcdef";
-	
 	str = malloc((nbrlen_hex(nbr) + 1) * sizeof(char));
 	if (str == NULL)
-	 	return (NULL);
+		return (NULL);
 	i = nbrlen_hex(nbr);
 	str[i] = 0;
 	if (nbr == 0)

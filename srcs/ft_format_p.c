@@ -3,27 +3,27 @@
 /*                                                        :::      ::::::::   */
 /*   ft_format_p.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rzaccari <rzaccari@student.42lausanne.c    +#+  +:+       +#+        */
+/*   By: rzaccari <rzaccari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/20 14:58:28 by rzaccari          #+#    #+#             */
-/*   Updated: 2022/05/12 20:24:14 by rzaccari         ###   ########.fr       */
+/*   Updated: 2022/05/13 17:38:15 by rzaccari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/ft_printf.h"
 
-void    format_p(Input *args)
+void	format_p(t_input *args)
 {
 	unsigned long long		nbr;
-    char    				*ptr;
+	char					*ptr;
 	int						i;
-    
+
 	nbr = va_arg(args->arguments, unsigned long long);
-    ptr = itoa_hex_p(nbr);
+	ptr = itoa_hex_p(nbr);
 	args->char_count += write(1, "0x", 2);
-    i = 0;
-    while (ptr[i])
-        args->char_count += write(1, &ptr[i++], 1);
+	i = 0;
+	while (ptr[i])
+		args->char_count += write(1, &ptr[i++], 1);
 	free(ptr);
 }
 

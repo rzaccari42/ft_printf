@@ -3,24 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   ft_format_d.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rzaccari <rzaccari@student.42lausanne.c    +#+  +:+       +#+        */
+/*   By: rzaccari <rzaccari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/20 14:58:28 by rzaccari          #+#    #+#             */
-/*   Updated: 2022/05/12 20:24:48 by rzaccari         ###   ########.fr       */
+/*   Updated: 2022/05/13 17:38:02 by rzaccari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/ft_printf.h"
 
-void	format_d(Input *args)
+void	format_d(t_input *args)
 {
 	int		i;
-    char	*d;
+	char	*d;
 
-    i = 0;
-    d = ft_itoa(va_arg(args->arguments, int));
-    while (d[i])
-        args->char_count += write(1, &d[i++], 1);
+	i = 0;
+	d = ft_itoa(va_arg(args->arguments, int));
+	while (d[i])
+		args->char_count += write(1, &d[i++], 1);
 	free(d);
 }
 
@@ -70,4 +70,3 @@ int	nbrlen(int nbr)
 	}
 	return (i);
 }
-

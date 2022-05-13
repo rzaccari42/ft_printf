@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_format_u.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rzaccari <rzaccari@student.42lausanne.c    +#+  +:+       +#+        */
+/*   By: rzaccari <rzaccari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/20 14:58:28 by rzaccari          #+#    #+#             */
-/*   Updated: 2022/05/12 20:24:27 by rzaccari         ###   ########.fr       */
+/*   Updated: 2022/05/13 17:38:35 by rzaccari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/ft_printf.h"
 
-void	format_u(Input *args)
+void	format_u(t_input *args)
 {
 	char	*u;
 	int		i;
@@ -63,4 +63,3 @@ int	nbrlen_unsigned(unsigned int nbr)
 	}
 	return (i);
 }
-

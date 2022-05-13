@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_format_x_upper.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rzaccari <rzaccari@student.42lausanne.c    +#+  +:+       +#+        */
+/*   By: rzaccari <rzaccari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/20 14:58:28 by rzaccari          #+#    #+#             */
-/*   Updated: 2022/05/12 20:24:36 by rzaccari         ###   ########.fr       */
+/*   Updated: 2022/05/13 17:38:47 by rzaccari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/ft_printf.h"
 
-void	format_x_upper(Input *args)
+void	format_x_upper(t_input *args)
 {
 	char	*upper_x;
 	int		i;
@@ -20,7 +20,7 @@ void	format_x_upper(Input *args)
 	upper_x = itoa_hex_upper(va_arg(args->arguments, unsigned int));
 	i = 0;
 	while (upper_x[i])
-		args->char_count += write(1, &upper_x[i++], 1);		
+		args->char_count += write(1, &upper_x[i++], 1);
 	free(upper_x);
 }
 
@@ -50,4 +50,3 @@ char	*itoa_hex_upper(unsigned int nbr)
 	}
 	return (str);
 }
-
